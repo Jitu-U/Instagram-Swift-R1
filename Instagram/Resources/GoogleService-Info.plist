@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>504430698199-t222t93cc49um95jp9htcmf5nccad9of.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.504430698199-t222t93cc49um95jp9htcmf5nccad9of</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBYxTW8wn9hvuulK2q09t71rxzDXMjAkbY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>504430698199</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jitu.Instagram</string>
+	<key>PROJECT_ID</key>
+	<string>jitu-instagram</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jitu-instagram.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:504430698199:ios:0b6993d7dafde2e2a95a92</string>
+</dict>
+</plist>

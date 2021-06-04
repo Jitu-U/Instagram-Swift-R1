@@ -23,9 +23,15 @@
                                     <constraint firstAttribute="height" constant="70" id="bKa-Ep-ReL"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Jitu❤️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTO-TT-oT5">
-                                <rect key="frame" x="157" y="818" width="100.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JITUWRLD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTO-TT-oT5">
+                                <rect key="frame" x="163" y="817" width="88.5" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYx-1S-9fB">
+                                <rect key="frame" x="187" y="788" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,7 +42,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uTO-TT-oT5" secondAttribute="bottom" constant="24" id="bcv-yC-N6a"/>
                             <constraint firstItem="c20-iJ-j4r" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cHM-4P-DjG"/>
                             <constraint firstItem="uTO-TT-oT5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gdm-oH-uhY"/>
+                            <constraint firstItem="uTO-TT-oT5" firstAttribute="top" secondItem="XYx-1S-9fB" secondAttribute="bottom" constant="8" symbolic="YES" id="q6d-3y-PnX"/>
                             <constraint firstItem="c20-iJ-j4r" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="5" id="qah-lW-x1R"/>
+                            <constraint firstItem="XYx-1S-9fB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xVa-eR-cdF"/>
                         </constraints>
                     </view>
                 </viewController>

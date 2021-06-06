@@ -8,13 +8,24 @@
 import UIKit
 
 protocol userFollowTableViewCellDelegate: AnyObject {
-    func didTapfollowUnfollowButton(model: String)
+    func didTapfollowUnfollowButton(model: userRelationshipModel)
+}
+
+enum  FollowState {
+    case following, not_following
+}
+
+struct userRelationshipModel {
+    let username: String
+    let name: String
+    let type: FollowState
 }
 
 class UserFollowTableViewCell: UITableViewCell {
     static let identifier = "UserFollowTableViewCell"
    
-    var weakdelegate: userFollowTableViewCellDelegate?
+    weak var delegate: userFollowTableViewCellDelegate?
+    private var model:userRelationshipModel?
     
     private let profilePicView: UIImageView = {
         let imageView = UIImageView()
@@ -60,8 +71,24 @@ class UserFollowTableViewCell: UITableViewCell {
         contentView.addSubview(followButton)
     }
     
-    public func configure(with model: String){
-        
+    public func configure(with model: userRelationshipModel){
+        self.model = model
+        nameLabel.text = model.name
+        usernameLabel.text = model.username
+        switch model.type {
+        case .following:
+            //Show unfollow button
+            followButton.setTitle("unfollow", for: .normal)
+            followButton.backgroundColor = .systemBackground
+            followButton.layer.borderColor = UIColor.label.cgColor
+            followButton.setTitleColor(.label, for: .normal)
+        case .not_following:
+            //Show follow button
+            followButton.setTitle("Follow", for: .normal)
+            followButton.backgroundColor = .systemBackground
+            followButton.layer.borderColor = UIColor.blue.cgColor
+            followButton.setTitleColor(.blue, for: .normal)
+        }
     }
     
     override func prepareForReuse() {
@@ -72,6 +99,17 @@ class UserFollowTableViewCell: UITableViewCell {
         followButton.setTitle(nil, for: .normal)
         followButton.layer.borderWidth = 0
         followButton.backgroundColor = nil
+        
+        followButton.addTarget(self,
+                               action: #selector(didTapFollowButton),
+                               for: .touchUpInside)
+    }
+    
+    @objc private func didTapFollowButton(){
+        guard let model = model else {
+            return
+        }
+        delegate?.didTapfollowUnfollowButton(model: model)
     }
     
     override func layoutSubviews() {

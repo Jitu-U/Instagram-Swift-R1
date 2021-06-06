@@ -6,7 +6,7 @@
 //
 
 
-
+import SDWebImage
 import UIKit
 
 protocol ProfileInfoHeaderCollectionReusableViewDelegate: AnyObject {
@@ -22,7 +22,7 @@ final class ProfileInfoHeaderCollectionReusableView: UICollectionReusableView {
     
     private let  profilePhotoImageView: UIImageView = {
       let imageView = UIImageView()
-        imageView.image = UIImage(named: "test")
+        imageView.sd_setImage(with: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo"), completed: nil)
         imageView.layer.masksToBounds = true
         return imageView
     }()

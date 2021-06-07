@@ -5,6 +5,7 @@
 //  Created by Jitesh gamit on 03/06/21.
 //
 
+import SDWebImage
 import UIKit
 
 protocol userFollowTableViewCellDelegate: AnyObject {
@@ -30,8 +31,8 @@ class UserFollowTableViewCell: UITableViewCell {
     private let profilePicView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .cyan
         imageView.layer.masksToBounds = true
+        imageView.sd_setImage(with: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo"), completed: nil)
         return imageView
     }()
     

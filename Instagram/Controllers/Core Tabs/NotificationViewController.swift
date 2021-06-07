@@ -141,7 +141,16 @@ extension NotificationViewController: NotificationsLikeTableViewCellDelegate, No
     }
     
     func didTapRelatedPostButton(model: userNotification) {
-        print("Tapped Post")
-        //Open Post
+        switch  model.type {
+        case .follow:
+            fatalError("Dev Error: func shouldn't be called")
+        case .like(let post):
+            let vc = PostViewController(model: post)
+            vc.title = post.posttype.rawValue
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+        case .comment(post: _, comment: _):
+            fatalError("Dev Error: func shouldn't be called")
+        }
     }
 }

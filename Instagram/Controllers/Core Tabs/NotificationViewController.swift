@@ -67,15 +67,17 @@ final class NotificationViewController: UIViewController, UITableViewDelegate, U
     
     private func fetchNotifications(){
         
+        let user = User(username: "jitu.171", name: (first: "", last: ""), profilePicture: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, birthdate: Date(), gender: .male, counts: UserCount(follower: 1, following: 1, posts: 1), joinDate: Date())
+        
         let post = UserPost(identifier: "",
                             posttype: .photo,
                             thumbnailImage: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!,
-                            postURL: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, caption: "Yo", likesCount: [], comments: [], postDate: Date(), tagUsers: [])
+                            postURL: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, caption: "Yo", likesCount: [], comments: [], postDate: Date(), tagUsers: [], owner: user)
         
         let comment =  postComment(identifier: "", username: "arianagrande", comment: "Awesome", postedDate: Date(), likes: [])
         for x in 1...100 {
             
-            let model = userNotification(type: x%2 == 0 ? .like(post: post) : .comment(post: post, comment: comment), text: "@jitu.171 liked your pic", user: User(username: "jitu.171", name: (first: "", last: ""), profilePicture: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, birthdate: Date(), gender: .male, counts: UserCount(follower: 1, following: 1, posts: 1), joinDate: Date()))
+            let model = userNotification(type: x%2 == 0 ? .like(post: post) : .comment(post: post, comment: comment), text: "@jitu.171 liked your pic", user: user)
             
             models.append(model)
         }

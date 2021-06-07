@@ -43,6 +43,7 @@ public struct UserPost{
     let comments: [postComment]
     let postDate: Date
     let tagUsers: [String]
+    let owner: User
 }
 
 struct postComment {

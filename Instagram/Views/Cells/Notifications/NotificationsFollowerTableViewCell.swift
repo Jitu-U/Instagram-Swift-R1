@@ -82,6 +82,8 @@ class NotificationsFollowerTableViewCell: UITableViewCell {
                 followButton.setTitleColor(.systemBlue, for: .normal)
             }
             break
+        case .comment(post: let post, comment: _):
+            break
         }
         label.text = model.text
         profilePicView.sd_setImage(with: model.user.profilePicture, completed: nil)

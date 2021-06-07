@@ -51,6 +51,7 @@ class NotificationsLikeTableViewCell: UITableViewCell {
         postButton.addTarget(self,
                              action: #selector(didTapPostButton),
                              for: .touchUpInside)
+        selectionStyle = .none
     }
     
     @objc private func didTapPostButton(){
@@ -72,6 +73,8 @@ class NotificationsLikeTableViewCell: UITableViewCell {
                                    for: .normal,
                                    completed: nil)
         case .follow:
+            break
+        case .comment(post: _, comment: _):
             break
         }
         label.text = model.text

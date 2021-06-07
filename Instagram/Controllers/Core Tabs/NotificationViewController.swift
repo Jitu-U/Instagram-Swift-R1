@@ -10,6 +10,7 @@ import UIKit
 enum UserNotification{
     case like(post: UserPost)
     case follow(state: FollowState)
+    case comment(post: UserPost, comment: postComment)
 }
 
 struct userNotification {
@@ -27,6 +28,7 @@ final class NotificationViewController: UIViewController, UITableViewDelegate, U
                            forCellReuseIdentifier: NotificationsFollowerTableViewCell.identifier)
         tableView.register(NotificationsLikeTableViewCell.self,
                            forCellReuseIdentifier: NotificationsLikeTableViewCell.identifier)
+        tableView.register(NotifcationsCommentTableViewCell.self, forCellReuseIdentifier: NotifcationsCommentTableViewCell.identifier)
         return tableView
     }()
     
@@ -69,9 +71,11 @@ final class NotificationViewController: UIViewController, UITableViewDelegate, U
                             posttype: .photo,
                             thumbnailImage: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!,
                             postURL: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, caption: "Yo", likesCount: [], comments: [], postDate: Date(), tagUsers: [])
+        
+        let comment =  postComment(identifier: "", username: "arianagrande", comment: "Awesome", postedDate: Date(), likes: [])
         for x in 1...100 {
             
-            let model = userNotification(type: x%2 == 0 ? .like(post: post) : .follow(state: .not_following), text: "@jitu.171 liked your pic", user: User(username: "jitu.171", name: (first: "", last: ""), profilePicture: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, birthdate: Date(), gender: .male, counts: UserCount(follower: 1, following: 1, posts: 1), joinDate: Date()))
+            let model = userNotification(type: x%2 == 0 ? .like(post: post) : .comment(post: post, comment: comment), text: "@jitu.171 liked your pic", user: User(username: "jitu.171", name: (first: "", last: ""), profilePicture: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, birthdate: Date(), gender: .male, counts: UserCount(follower: 1, following: 1, posts: 1), joinDate: Date()))
             
             models.append(model)
         }
@@ -106,6 +110,11 @@ final class NotificationViewController: UIViewController, UITableViewDelegate, U
             cell.delegate = self
             return cell
        
+        case .comment:
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotifcationsCommentTableViewCell.identifier, for: indexPath) as! NotifcationsCommentTableViewCell
+            cell.configure(with: model)
+            cell.delegate = self
+            return cell
         }
     }
     
@@ -117,7 +126,15 @@ final class NotificationViewController: UIViewController, UITableViewDelegate, U
 }
 
 
-extension NotificationViewController: NotificationsLikeTableViewCellDelegate, NotificationsFollowerTableViewCellDelegate{
+extension NotificationViewController: NotificationsLikeTableViewCellDelegate, NotificationsCommentTableViewCellDelegate, NotificationsFollowerTableViewCellDelegate{
+    func didTapReplyButton(model: userNotification) {
+        //Retply
+    }
+    
+    func didTapLikeCommentButton(model: userNotification) {
+        //Like Button Tap
+    }
+    
     func didTapFollowUnfollowButton(model: userNotification) {
         print("Tapped Button")
         // Follow/Unfollow

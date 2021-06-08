@@ -82,7 +82,7 @@ class NotificationsFollowerTableViewCell: UITableViewCell {
                 followButton.setTitleColor(.systemBlue, for: .normal)
             }
             break
-        case .comment(post: let post, comment: _):
+        case .comment(post: _, comment: _):
             break
         }
         label.text = model.text

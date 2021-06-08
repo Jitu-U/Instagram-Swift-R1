@@ -165,7 +165,7 @@
         <scene sceneID="own-qt-oxd">
             <objects>
                 <navigationController id="dFN-eK-e8U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" id="M6j-po-aNL"/>
+                    <tabBarItem key="tabBarItem" title="" image="plus.app" catalog="system" id="M6j-po-aNL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLb-jn-zgJ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,11 +197,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" catalog="system" width="128" height="94"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus.app" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

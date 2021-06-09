@@ -19,7 +19,7 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     private let likeButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(systemName: "heart")
+        let image = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light))
         button.setImage(image, for: .normal)
         button.tintColor = .label
         button.imageView?.contentMode = .scaleAspectFit
@@ -28,14 +28,16 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     private let commentButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "message"), for: .normal)
+        let image = UIImage(systemName: "message", withConfiguration: UIImage.SymbolConfiguration(pointSize: 28, weight: .light))
+        button.setImage(image, for: .normal)
         button.tintColor = .label
         return button
     }()
     
     private let sendButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        let image = UIImage(systemName: "paperplane", withConfiguration: UIImage.SymbolConfiguration(pointSize: 27, weight: .light))
+        button.setImage(image, for: .normal)
         button.tintColor = .label
         return button
     }()
@@ -58,7 +60,8 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     }
     
     @objc private func didTapLikeButton(){
-        likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        let image = UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 27, weight: .light))
+        likeButton.setImage(image, for: .normal)
         likeButton.tintColor = .systemPink
         delegate?.didTapLikeButton()
     }
@@ -85,7 +88,8 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         likeButton.tintColor = .label
-        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        let image = UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light))
+        likeButton.setImage(image, for: .normal)
         
     }
 

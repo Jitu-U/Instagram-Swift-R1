@@ -35,9 +35,10 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let Story = UIBarButtonItem(image: UIImage(systemName: "camera")?.withTintColor(UIColor.label), style: .done,target: self, action: #selector(didTapStoryButton))
+        let Story = UIBarButtonItem(image: UIImage(systemName: "camera", withConfiguration: UIImage.SymbolConfiguration(pointSize: 21, weight: .light))?.withTintColor(UIColor.label),
+                                    style: .done,target: self, action: #selector(didTapStoryButton))
         Story.tintColor = .label
-        let messenger = UIBarButtonItem(image: UIImage(systemName: "message"), style: .done, target: self, action: #selector(didTapMessageButton))
+        let messenger = UIBarButtonItem(image: UIImage(systemName: "message", withConfiguration: UIImage.SymbolConfiguration(pointSize: 21, weight: .light)), style: .done, target: self, action: #selector(didTapMessageButton))
         messenger.tintColor = .label
         
         navigationItem.titleView = UIImageView(image: UIImage(named: "instalogofullbg"))

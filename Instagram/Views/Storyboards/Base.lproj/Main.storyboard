@@ -95,7 +95,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D6o-mm-lSP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
@@ -118,6 +118,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="47g-Nh-z99">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Pk0-ct-tvw" kind="relationship" relationship="rootViewController" id="qT5-Rr-Opm"/>
@@ -135,6 +136,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPI-Ru-Jma">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Ilw-4P-UEU" kind="relationship" relationship="rootViewController" id="LsO-tl-W4H"/>
@@ -152,6 +154,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNM-Zl-oSH">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="eG1-gJ-roP" kind="relationship" relationship="rootViewController" id="2pW-Pi-9nh"/>
@@ -169,6 +172,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eLb-jn-zgJ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="0fU-Gb-fDm" kind="relationship" relationship="rootViewController" id="sKq-vu-xrJ"/>
@@ -186,6 +190,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zxa-k2-kJN">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <connections>
                         <segue destination="ihD-Fb-LEd" kind="relationship" relationship="rootViewController" id="mrA-8U-bmI"/>

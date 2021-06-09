@@ -13,6 +13,8 @@ final class ProfileViewController: UIViewController {
     
     
     private var collectionView: UICollectionView?
+    
+   
 
     private var userPosts = [UserPost]()
     
@@ -102,8 +104,16 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         collectionView.deselectItem(at: indexPath, animated: true)
         
         //get the model and open post controller
-        let vc = PostViewController(model: nil)
-        vc.title = "Post"
+        
+        let user = User(username: "jitu.171", name: (first: "", last: ""), profilePicture: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, birthdate: Date(), gender: .male, counts: UserCount(follower: 1, following: 1, posts: 1), joinDate: Date())
+        
+        let post = UserPost(identifier: "",
+                            posttype: .photo,
+                            thumbnailImage: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!,
+                            postURL: URL(string: "https://lh3.googleusercontent.com/ogw/ADea4I4IM4YJNCrA9jACfUrmeywfnLXkcxKXQvKHP79e71w=s64-c-mo")!, caption: "Yo", likesCount: [], comments: [], postDate: Date(), tagUsers: [], owner: user)
+      //  let model = models[indexPath.row]
+        let vc = PostViewController(model: post)
+        vc.title = post.posttype.rawValue
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
